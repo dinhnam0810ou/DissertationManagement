@@ -10,9 +10,9 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Trang Chủ</Nav.Link>
-                            <Nav.Link href="#register">Đăng Ký</Nav.Link>
-                            <Nav.Link href="#login">Đăng nhập</Nav.Link>
+                            <Nav.Link href="home">Trang Chủ</Nav.Link>
+                            <Nav.Link href="register">Đăng Ký</Nav.Link>
+                            <Nav.Link href="login">Đăng nhập</Nav.Link>
 
                         </Nav>
                         <Form className="d-flex">
