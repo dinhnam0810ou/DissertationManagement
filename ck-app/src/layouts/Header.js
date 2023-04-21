@@ -18,7 +18,7 @@ const Header = () => {
                         <Form className="d-flex">
                             <Form.Control type="search" placeholder="Search..."
                                 className="me-2" aria-label="Search" />
-                            <Button type="submit" variant="info">Tffgfgfgìm</Button>
+                            <Button type="submit" variant="info">Tìm</Button>
                         </Form>
                     </Navbar.Collapse>
                 </Container>

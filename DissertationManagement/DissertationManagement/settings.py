@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Dissertations.apps.DissertationsConfig',
     'rest_framework',
     'drf_yasg',
+    'oauth2_provider',
 ]
 
 MIDDLEWARE = [
