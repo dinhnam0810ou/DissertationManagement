@@ -83,11 +83,16 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dissertationdb',
         'USER': 'root',
-        'PASSWORD': 'Admin@123',
+        'PASSWORD': 'dinhnam0810',
         'HOST': ''  # mặc định localhost
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
