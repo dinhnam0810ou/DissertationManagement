@@ -3,6 +3,8 @@ from rest_framework.decorators import action
 from rest_framework.views import Response
 from .serializers import UserSerializer, DissertationSerializer, CouncilSerializer, TargetSerializer, MemberSerializer
 from .models import User, Council, Target, Member
+from .perms import MinistryPermission
+
 # Create your views here.
 
 
@@ -21,12 +23,13 @@ class TargetViewSet(viewsets.ModelViewSet):
 class DissertationViewSet(viewsets.ModelViewSet):
     queryset = Council.objects.filter(active=True)
     serializer_class = DissertationSerializer
-    permission_classes = [permissions.IsAuthenticated,]
+    permission_classes = [permissions.IsAuthenticated, MinistryPermission]
 
 
 class CouncilViewSet(viewsets.ViewSet, generics.CreateAPIView, generics.RetrieveAPIView, generics.DestroyAPIView):
     queryset = Council.objects.filter(active=True)
     serializer_class = CouncilSerializer
+    permission_classes = [permissions.IsAuthenticated, MinistryPermission]
 
     def get_permissions(self):
         if self.action in ['create', 'retrieve']:

@@ -39,6 +39,13 @@ class UserDissertation(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
 
 
+class MemberRole(models.Model):
+    name = models.CharField(max_length=50, null=False)
+
+    def __str__(self):
+        return self.name
+
+
 class Target(models.Model):
     name = models.CharField(max_length=50, null=False)
 
@@ -47,7 +54,7 @@ class Target(models.Model):
 
 
 class Member(models.Model):
-    member_role = models.CharField(max_length=50, null=False)
+    member_role = models.ForeignKey(MemberRole, related_name='member', on_delete=models.SET_NULL, null=True)
     score = models.FloatField()
     user = models.ForeignKey(User, related_name='member', on_delete=models.SET_NULL, null=True)
     council = models.ForeignKey(Council, related_name='member', on_delete=models.SET_NULL, null=True)
@@ -61,5 +68,6 @@ class TargetMember(models.Model):
     target = models.ForeignKey(Target, related_name='target_member', on_delete=models.SET_NULL, null=True)
     member = models.ForeignKey(Member, related_name='target_member', on_delete=models.SET_NULL, null=True)
     score = models.FloatField()
+
 
 

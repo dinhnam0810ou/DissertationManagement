@@ -1,11 +1,27 @@
 from rest_framework import serializers
 from .models import User, Dissertation, Council, Target, Member
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 class MemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Member
         fields = ['id', 'member_role', 'score', 'user', 'council', 'target']
+
+    def create(self, validated_data):
+        data = validated_data.copy()
+        member = Member(**data)
+        member.save()
+        user = User.objects.get(pk=data.user)
+        send_mail(
+            'Title',
+            'Message',
+            'settings.EMAIL_HOST_USER',
+            [user.email],
+            fail_silently=False
+        )
+        return member
 
 
 class TargetSerializer(serializers.ModelSerializer):
