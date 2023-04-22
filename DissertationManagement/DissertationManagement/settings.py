@@ -25,6 +25,14 @@ SECRET_KEY = 'django-insecure-tegws40jfzkctuiq4w885*#!!=+=nxhf(wfi)zp=h@%#h7ew-q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'shipnowonline@gmail.com'
+EMAIL_HOST_PASSWORD = '123456789aA@'
+
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'Dissertations.User'
