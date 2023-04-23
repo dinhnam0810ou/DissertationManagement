@@ -8,22 +8,39 @@ import Header from './layouts/Header';
 import Login from './components/Login';
 import { backgroundImage } from './assets';
 import Dissertation from './components/Dissertation';
+import './assets/css/bootstrap.min.css'
+import './assets/css/style.css'
+import Layout from './layouts/Layout';
+import Statistics from './components/Statistics';
+
+// import './assets/js/main.js'
+
 function App() {
   return (
-    <div className="App"   style={{backgroundImage: `url(${backgroundImage})` }}>
-       <BrowserRouter> 
-      <Header />
-      <Container>
-          <Routes path='/' >
-            <Route index path='/login' element={<Login />} />
-            <Route path='/' element={<Navigate to={"/login"}/>} />
-            <Route  path='/dissertation' element={<Dissertation />} />
+    <div className="App"   >
+      <BrowserRouter>
+
+        <Container>
+
+          <Routes>
+            <Route path='/login' element={<Login />} />
             {/* <Route path='/register' element={<Register />} /> */}
-            {/* <Route path='*' element={<div className='alert alert-info m-1'>Comming soon...</div>} /> */}
           </Routes>
+    
+          <Routes>
+            <Route path='/' element={<Layout />} >
+              {/* <Route path='/' element={<Navigate to={"/login"} />} /> */}
+              <Route index path='/dissertation' element={<Dissertation />} />
+              <Route index path='/statistics' element={<Statistics />} />
+            </Route>
+          </Routes>
+
+
+
+          {/* <Route path='*' element={<div className='alert alert-info m-1'>Comming soon...</div>} /> */}
         </Container>
-      </BrowserRouter> 
-      <Footer/>
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }

@@ -13,7 +13,7 @@ console.log(email)
           <Col md={8} lg={6} xs={12}>
             <div className="border border-3 border-primary"></div>
             <Card className="shadow">
-              <Card.Body>''
+              <Card.Body>
                 <div className="mb-3 mt-md-4">
                   <h2 className="fw-bold mb-2 text-uppercase ">LOG IN</h2>
                   <div className="mb-3">
