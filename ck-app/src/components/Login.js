@@ -1,64 +1,41 @@
 import { useState } from "react"
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
-
 const Login = () => {
-  const [email, setEmail] = useState()
+  const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
   const handleSubmit = () => {
-console.log(email)
+    console.log(email)
   }
   return (
     <div>
-      <Container>
-        <Row className="vh-100 d-flex justify-content-center align-items-center">
-          <Col md={8} lg={6} xs={12}>
-            <div className="border border-3 border-primary"></div>
-            <Card className="shadow">
-              <Card.Body>
-                <div className="mb-3 mt-md-4">
-                  <h2 className="fw-bold mb-2 text-uppercase ">LOG IN</h2>
-                  <div className="mb-3">
-                    <Form>
-                      <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" placeholder="Enter email" />
-                      </Form.Group>
-
-                      <Form.Group
-                        className="mb-3"
-                        controlId="formBasicPassword"
-                      >
-                        <Form.Control type="password" placeholder="Password" />
-                      </Form.Group>
-                      <Form.Group
-                        className="mb-3"
-                        controlId="formBasicCheckbox"
-                      >
-                        <p className="small">
-                          <a className="text-primary" href="#!">
-                            Forgot password?
-                          </a>
-                        </p>
-                      </Form.Group>
-                      <div className="d-grid">
-                        <Button onClick={handleSubmit} variant="primary" type="submit">
-                          Login
-                        </Button>
-                      </div>
-                    </Form>
-                    <div className="mt-3">
-                      <p className="mb-0  text-center">
-                        Don't have an account?{" "}
-                        <a href="{''}" className="text-primary fw-bold">
-                          Sign Up
-                        </a>
-                      </p>
-                    </div>
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white" >
+              <div class="card-body p-5 text-center">
+                <div class="mb-md-5 mt-md-4 pb-5" onChange={(e) => { setEmail(e.target.value) }} value={email}> 
+                  <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                  <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                  <div class="form-outline form-white mb-4">
+                    <label class="form-label" for="username">Email</label>
+                    <input type="username" id="username" class="form-control form-control-lg" />
                   </div>
+                  <div class="form-outline form-white mb-4">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" class="form-control form-control-lg" />
+                  </div>
+                  <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit" onClick={handleSubmit}>Login</button>
                 </div>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+                <div>
+                  <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

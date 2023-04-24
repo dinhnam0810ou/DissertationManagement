@@ -24,11 +24,11 @@ function Dissertation() {
               <thead>
                 <tr class="text-dark">
                   <th scope="col"><input class="form-check-input" type="checkbox" /></th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Invoice</th>
-                  <th scope="col">Customer</th>
-                  <th scope="col">Amount</th>
-                  <th scope="col">Status</th>
+                  <th scope="col">Tên khóa luận</th>
+                  <th scope="col">Sinh viên 1</th>
+                  <th scope="col">Sinh viên 2</th>
+                  <th scope="col">Giảng viên 1</th>
+                  <th scope="col">Giảng viên 2</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
