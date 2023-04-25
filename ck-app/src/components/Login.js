@@ -14,8 +14,7 @@ const Login = () => {
             <div class="card bg-dark text-white" >
               <div class="card-body p-5 text-center">
                 <div class="mb-md-5 mt-md-4 pb-5" onChange={(e) => { setEmail(e.target.value) }} value={email}> 
-                  <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                  <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                  <h2 class="text-white-50 mb-5">Login</h2>
                   <div class="form-outline form-white mb-4">
                     <label class="form-label" for="username">Email</label>
                     <input type="username" id="username" class="form-control form-control-lg" />
