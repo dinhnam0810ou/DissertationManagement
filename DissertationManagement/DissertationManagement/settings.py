@@ -39,6 +39,10 @@ AUTH_USER_MODEL = 'Dissertations.User'
 MEDIA_ROOT = '%s/Dissertations/static/' % BASE_DIR
 # Application definition
 
+OAUTH2_PROVIDER = {
+     'OAUTH2_BACKEND_CLASS': 'oauth2_provider.oauth2_backends.JSONOAuthLibCore'
+}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
