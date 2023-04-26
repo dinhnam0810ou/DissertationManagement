@@ -1,6 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import UserService from '../services/UserService';
 
+const data = [
+  {
+    id: 1,
+    name: "2e",
+    score: 3,
+    date: "june",
+    council: { name: "hd1" },
+    user: { name: "nv1" },
+  },
+  {
+    id: 2,
+    name: "2e",
+    score: 3,
+    date: "july",
+    council: { name: "hd1" },
+    user: { name: "nv1" },
+  }
+]
+
 function Dissertation() {
   const [dissertationList, setDissertationList] = useState([]);
 
@@ -9,7 +28,10 @@ function Dissertation() {
       setDissertationList(res.data);
     })
   }, [])
-
+const getData=()=>{
+  let Datatuapi=data;
+  setDissertationList(Datatuapi)
+}
   return (
     <>
       {dissertationList[0] ?? 'dassdaasd'}
@@ -28,56 +50,20 @@ function Dissertation() {
                   <th scope="col">Sinh viên 1</th>
                   <th scope="col">Sinh viên 2</th>
                   <th scope="col">Giảng viên 1</th>
-                  <th scope="col">Giảng viên 2</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><input class="form-check-input" type="checkbox" /></td>
-                  <td>01 Jan 2045</td>
-                  <td>INV-0123</td>
-                  <td>Jhon Doe</td>
-                  <td>$123</td>
-                  <td>Paid</td>
-                  <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                </tr>
-                <tr>
-                  <td><input class="form-check-input" type="checkbox" /></td>
-                  <td>01 Jan 2045</td>
-                  <td>INV-0123</td>
-                  <td>Jhon Doe</td>
-                  <td>$123</td>
-                  <td>Paid</td>
-                  <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                </tr>
-                <tr>
-                  <td><input class="form-check-input" type="checkbox" /></td>
-                  <td>01 Jan 2045</td>
-                  <td>INV-0123</td>
-                  <td>Jhon Doe</td>
-                  <td>$123</td>
-                  <td>Paid</td>
-                  <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                </tr>
-                <tr>
-                  <td><input class="form-check-input" type="checkbox" /></td>
-                  <td>01 Jan 2045</td>
-                  <td>INV-0123</td>
-                  <td>Jhon Doe</td>
-                  <td>$123</td>
-                  <td>Paid</td>
-                  <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                </tr>
-                <tr>
-                  <td><input class="form-check-input" type="checkbox" /></td>
-                  <td>01 Jan 2045</td>
-                  <td>INV-0123</td>
-                  <td>Jhon Doe</td>
-                  <td>$123</td>
-                  <td>Paid</td>
-                  <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                </tr>
+                {data.map((kl, idx) =>
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>{kl.name}</td>
+                    <td>{kl.score}</td>
+                    <td>{kl.date}</td>
+                    <td>{kl.council.name}</td>
+                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                  </tr>)}
+
               </tbody>
             </table>
           </div>

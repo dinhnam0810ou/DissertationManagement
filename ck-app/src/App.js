@@ -4,7 +4,7 @@ import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
 import './App.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Footer from './layouts/Footer';
-import Header from './layouts/Header';
+
 import Login from './components/Login';
 import { backgroundImage } from './assets';
 import Dissertation from './components/Dissertation';
