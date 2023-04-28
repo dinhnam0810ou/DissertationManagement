@@ -33,6 +33,7 @@ const Login = () => {
         dispatch({
           "type": "login",
           "payload": user.data
+          
         })
       } catch { }
     }
