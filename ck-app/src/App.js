@@ -4,7 +4,6 @@ import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
 import './App.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Footer from './layouts/Footer';
-
 import Login from './components/Login';
 import { backgroundImage } from './assets';
 import Dissertation from './components/Dissertation';
@@ -12,6 +11,7 @@ import './assets/css/bootstrap.min.css'
 import './assets/css/style.css'
 import Layout from './layouts/Layout';
 import Statistics from './components/Statistics';
+import Newdissertation from './components/Newdissertation';
 
 // import './assets/js/main.js'
 
@@ -32,6 +32,7 @@ function App() {
               {/* <Route path='/' element={<Navigate to={"/login"} />} /> */}
               <Route index path='/dissertation' element={<Dissertation />} />
               <Route index path='/statistics' element={<Statistics />} />
+              <Route index path='/newdissertation' element={<Newdissertation />} />
             </Route>
           </Routes>
 
