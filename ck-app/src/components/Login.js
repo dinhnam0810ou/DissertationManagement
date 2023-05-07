@@ -6,7 +6,7 @@ import { Navigate } from "react-router-dom";
 import { MyUserContext } from "../configs/MyContext";
 
 const Login = () => {
-  const [username, setUsername] = useState(null)
+  const [username, setUsername] = useState(null);
   // [(password, setPassword)] = useState(null);
   return (
     <div>
