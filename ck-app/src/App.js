@@ -5,6 +5,7 @@ import './App.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Footer from './layouts/Footer';
 import Login from './components/Login';
+import Register from './components/Register';
 import { backgroundImage } from './assets';
 import Dissertation from './components/Dissertation';
 import './assets/css/bootstrap.min.css'
@@ -24,7 +25,7 @@ function App() {
 
           <Routes>
             <Route path='/login' element={<Login />} />
-            {/* <Route path='/register' element={<Register />} /> */}
+            <Route path='/register' element={<Register />} />
           </Routes>
     
           <Routes>
