@@ -1,7 +1,7 @@
 import axios from "axios";
 import cookie from "react-cookies";
 
-export const endpoints = {
+export let endpoints = {
   dissertation: "/dissertation/",
   login: "/o/token/",
   "current-user": "/users/current-user/",
